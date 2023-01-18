@@ -1,0 +1,21 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Model:
+	handlungen+=Handlung*;
+	
+Handlung:
+	kaufHandlung | verkaufHandlung;
+	
+kaufHandlung:
+	"kaufen" INT Viehzeug "fuer" INT
+;
+
+verkaufHandlung:
+	"verkaufen" INT Viehzeug "fuer" INT
+;
+
+Viehzeug:
+	"Pferd" | "Schwein"
+;
